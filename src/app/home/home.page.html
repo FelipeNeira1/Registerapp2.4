@@ -1,20 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<!-- TITULO -->
+<ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+        <ion-title size="medium">RegistrAPP
+        </ion-title>
     </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+</ion-header>
+<br>
+<ion-content [fullscreen]="true">
+    <div id="container">
+        <!-- BANNER DEL DUOC -->
+        <ion-item>
+            <ion-img src="assets/Banner.png"></ion-img>
+        </ion-item>
+        <!-- INPUT USUARIO -->
+        <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" minlength="3 " maxlength="8" [(ngModel)]="user.user"></ion-input>
+        </ion-item>
+        <!-- INPUT CONTRASENA -->
+        <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" minlength="6" maxlength="16" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+        <br>
+        <br>
+        <br>
+        <!-- BOTON INGRESAR -->
+            <a style="width : 66%;"  (click)="ingresar2()" class="button">INGRESAR</a>
+        <br>
+        <br>
+        <!-- BOTON RECUPERAR CONTRASENA-->
+        <div>
+            <a style="width : 75%;" routerLink="/restablecer" class="button" (click)="restablecer()">Recuperar Contraseña</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <ion-label position="floating">Mesa de Servicios</ion-label>
+        <br>
+        <ion-label position="floating">(+56) 44220 1098</ion-label>
+    </div>
 </ion-content>
