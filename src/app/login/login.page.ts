@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 
@@ -14,8 +14,17 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 export class LoginPage implements OnInit {
 
   image: string;
+  usuario: any;
 
-  constructor( private barcodeScanner: BarcodeScanner ) { }
+  constructor( private router: Router,
+    private barcodeScanner: BarcodeScanner,
+    private activeRoute: ActivatedRoute, ) {
+    this.activeRoute.queryParams.subscribe((params) => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.usuario = this.router.getCurrentNavigation().extras.state.user.user;
+      }
+    });
+   }
 
 
   ngOnInit() {

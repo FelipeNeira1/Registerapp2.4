@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { NavigationExtras, Router  } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -20,15 +20,16 @@ export class HomePage implements OnInit {
     private authService: AuthService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 // ingresar 1 ya no lo uso
   ingresar() {
     if (this.validateModel(this.user)) {
       this.presentToast('Bienvenido ' + this.user.user);
 
-      let navigationExtras: NavigationExtras = {
+      const navigationExtras: NavigationExtras = {
         state: {
-          user: this.user,
+          user: this.user.user,
         },
       };
       this.router.navigate(['/login'], navigationExtras);

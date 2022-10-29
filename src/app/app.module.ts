@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 
 import { IonicStorageModule } from '@ionic/storage-angular';
 
-import { AuthguardGuard } from './authguard.guard';
+import { AuthguardGuard } from '../guards/authguard.guard';
 
-import { Camera } from '@awesome-cordova-plugins/camera/ngx'
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
